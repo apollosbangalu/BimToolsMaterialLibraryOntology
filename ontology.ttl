@@ -1,0 +1,2619 @@
+@prefix : <http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#> .
+
+<http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology> rdf:type owl:Ontology ;
+                                                                       owl:versionIRI <http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology/0.1> ;
+                                                                       <http://purl.org/dc/elements/1.1/description> """This is a knowledge model that aims to provide the taxonomy and  vocabulary to describe the building materials and products,with their corresponding properties and individuals relevant within the construction industry as found within the most commonly used Building Information Modeling (BIM) tools.
+This is developed to closely follow the basic Industry Foundation Class (IFC) schema IFC4 ADD2_TC1 so that it can be used for semantic interoperability solutions within the BIM domain"""@en ;
+                                                                       <http://purl.org/dc/elements/1.1/title> "BIM Tool Material Library Ontology"@en ;
+                                                                       <http://purl.org/dc/terms/contributor> "Professor Jakob Beetz"@en ;
+                                                                       <http://purl.org/dc/terms/creator> "Bangalu Apollos Yohanna"@en ;
+                                                                       <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                                                       :preferredNamespacePrefix "bimtool"@en ;
+                                                                       :preferredNamespaceUri "http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology"@en ;
+                                                                       rdfs:label "Building Information Modelling (BIM) Tools Material Library Ontology"@en ;
+                                                                       owl:versionInfo 0.1 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/dcam/domainIncludes
+<http://purl.org/dc/dcam/domainIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/dcam/rangeIncludes
+<http://purl.org/dc/dcam/rangeIncludes> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1#description
+<http://purl.org/dc/elements/1.1#description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/contributor
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty ;
+                                              <http://purl.org/dc/terms/description> "The guidelines for using names of persons or organizations as creators also apply to contributors.  Typically, the name of a Contributor should be used to indicate the entity."@en ;
+                                              <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                              rdfs:comment "An entity responsible for making contributions to the resource."@en ;
+                                              rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                              rdfs:label "Contributor"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/coverage
+<http://purl.org/dc/elements/1.1/coverage> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.org/dc/terms/description> "Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names [[TGN](https://www.getty.edu/research/tools/vocabulary/tgn/index.html)]. Where appropriate, named places or time periods may be used in preference to numeric identifiers such as sets of coordinates or date ranges."@en ;
+                                           <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                           rdfs:comment "The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant."@en ;
+                                           rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                           rdfs:label "Coverage"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/coverage) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty ;
+                                          <http://purl.org/dc/terms/description> "Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."@en ;
+                                          <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                          rdfs:comment "An entity primarily responsible for making the resource."@en ;
+                                          rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                          rdfs:label "Creator"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty ;
+                                       <http://purl.org/dc/terms/description> "Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a '/' (slash) character.  Either the start or end date may be missing."@en ;
+                                       <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                       rdfs:comment "A point or period of time associated with an event in the lifecycle of the resource."@en ;
+                                       rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                       rdfs:label "Date"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/date) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/format
+<http://purl.org/dc/elements/1.1/format> rdf:type owl:AnnotationProperty ;
+                                         <http://purl.org/dc/terms/description> "Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of Internet Media Types [[MIME](https://www.iana.org/assignments/media-types/media-types.xhtml)]."@en ;
+                                         <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                         rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
+                                         rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                         rdfs:label "Format"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/format) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/identifier
+<http://purl.org/dc/elements/1.1/identifier> rdf:type owl:AnnotationProperty ;
+                                             <http://purl.org/dc/terms/description> "Recommended practice is to identify the resource by means of a string conforming to an identification system."@en ;
+                                             <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                             rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
+                                             rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                             rdfs:label "Identifier"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/identifier) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/language
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.org/dc/terms/description> "Recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of an IETF Best Current Practice 47 [[IETF-BCP47](https://tools.ietf.org/html/bcp47)] language tag."@en ;
+                                           <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                           rdfs:comment "A language of the resource."@en ;
+                                           rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                           rdfs:label "Language"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/language) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:AnnotationProperty ;
+                                            <http://purl.org/dc/terms/description> "Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity."@en ;
+                                            <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                            rdfs:comment "An entity responsible for making the resource available."@en ;
+                                            rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                            rdfs:label "Publisher"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/relation
+<http://purl.org/dc/elements/1.1/relation> rdf:type owl:AnnotationProperty ;
+                                           <http://purl.org/dc/terms/description> "Recommended practice is to identify the related resource by means of a URI. If this is not possible or feasible, a string conforming to a formal identification system may be provided."@en ;
+                                           <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                           rdfs:comment "A related resource."@en ;
+                                           rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                           rdfs:label "Relation"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/relation) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:AnnotationProperty ;
+                                         <http://purl.org/dc/terms/description> "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."@en ;
+                                         <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                         rdfs:comment "Information about rights held in and over the resource."@en ;
+                                         rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                         rdfs:label "Rights"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/rights) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/source
+<http://purl.org/dc/elements/1.1/source> rdf:type owl:AnnotationProperty ;
+                                         <http://purl.org/dc/terms/description> "The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system."@en ;
+                                         <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                         rdfs:comment "A related resource from which the described resource is derived."@en ;
+                                         rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                         rdfs:label "Source"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/source) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/subject
+<http://purl.org/dc/elements/1.1/subject> rdf:type owl:AnnotationProperty ;
+                                          <http://purl.org/dc/terms/description> "Typically, the subject will be represented using keywords, key phrases, or classification codes.  Recommended best practice is to use a controlled vocabulary."@en ;
+                                          <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                          rdfs:comment "The topic of the resource."@en ;
+                                          rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                          rdfs:label "Subject"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/subject) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/type
+<http://purl.org/dc/elements/1.1/type> rdf:type owl:AnnotationProperty ;
+                                       <http://purl.org/dc/terms/description> "Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [[DCMI-TYPE](http://dublincore.org/documents/dcmi-type-vocabulary/)]. To describe the file format, physical medium, or dimensions of the resource, use the Format element."@en ;
+                                       <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                       rdfs:comment "The nature or genre of the resource."@en ;
+                                       rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                       rdfs:label "Type"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/type) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> ,
+                                                       <http://purl.org/dc/terms/description> .
+
+
+###  http://purl.org/dc/terms/accessRights
+<http://purl.org/dc/terms/accessRights> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> ,
+                                                           <http://purl.org/dc/terms/rights> .
+
+
+###  http://purl.org/dc/terms/accrualMethod
+<http://purl.org/dc/terms/accrualMethod> rdf:type owl:AnnotationProperty ;
+                                         rdfs:domain <http://purl.org/dc/dcmitype/Collection> .
+
+
+###  http://purl.org/dc/terms/accrualPeriodicity
+<http://purl.org/dc/terms/accrualPeriodicity> rdf:type owl:AnnotationProperty ;
+                                              rdfs:domain <http://purl.org/dc/dcmitype/Collection> .
+
+
+###  http://purl.org/dc/terms/accrualPolicy
+<http://purl.org/dc/terms/accrualPolicy> rdf:type owl:AnnotationProperty ;
+                                         rdfs:domain <http://purl.org/dc/dcmitype/Collection> .
+
+
+###  http://purl.org/dc/terms/alternative
+<http://purl.org/dc/terms/alternative> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> ;
+                                       rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/audience
+<http://purl.org/dc/terms/audience> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/available
+<http://purl.org/dc/terms/available> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                     rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty ;
+                                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> ;
+                                                 rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/conformsTo
+<http://purl.org/dc/terms/conformsTo> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                         <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/contributor> .
+
+
+###  http://purl.org/dc/terms/coverage
+<http://purl.org/dc/terms/coverage> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                   rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/creator> ,
+                                                      <http://purl.org/dc/terms/contributor> .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty ;
+                                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateAccepted
+<http://purl.org/dc/terms/dateAccepted> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                        rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateCopyrighted
+<http://purl.org/dc/terms/dateCopyrighted> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                           rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/dateSubmitted
+<http://purl.org/dc/terms/dateSubmitted> rdf:type owl:AnnotationProperty ;
+                                         rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                         rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> .
+
+
+###  http://purl.org/dc/terms/educationLevel
+<http://purl.org/dc/terms/educationLevel> rdf:type owl:AnnotationProperty ;
+                                          rdfs:subPropertyOf <http://purl.org/dc/terms/audience> .
+
+
+###  http://purl.org/dc/terms/extent
+<http://purl.org/dc/terms/extent> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> ,
+                                                     <http://purl.org/dc/terms/format> .
+
+
+###  http://purl.org/dc/terms/format
+<http://purl.org/dc/terms/format> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
+
+
+###  http://purl.org/dc/terms/hasFormat
+<http://purl.org/dc/terms/hasFormat> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                        <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/hasPart
+<http://purl.org/dc/terms/hasPart> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                      <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/hasVersion
+<http://purl.org/dc/terms/hasVersion> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                         <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/identifier> ;
+                                      rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/isFormatOf
+<http://purl.org/dc/terms/isFormatOf> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                         <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                       <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isReferencedBy
+<http://purl.org/dc/terms/isReferencedBy> rdf:type owl:AnnotationProperty ;
+                                          rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                             <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isReplacedBy
+<http://purl.org/dc/terms/isReplacedBy> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                           <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isRequiredBy
+<http://purl.org/dc/terms/isRequiredBy> rdf:type owl:AnnotationProperty ;
+                                        rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                           <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/isVersionOf
+<http://purl.org/dc/terms/isVersionOf> rdf:type owl:AnnotationProperty ;
+                                       rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                          <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                  rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/language> .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> ,
+                                                      <http://purl.org/dc/terms/rights> .
+
+
+###  http://purl.org/dc/terms/mediator
+<http://purl.org/dc/terms/mediator> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/terms/audience> .
+
+
+###  http://purl.org/dc/terms/medium
+<http://purl.org/dc/terms/medium> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> ,
+                                                     <http://purl.org/dc/terms/format> .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                    rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty ;
+                                     rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/publisher> .
+
+
+###  http://purl.org/dc/terms/references
+<http://purl.org/dc/terms/references> rdf:type owl:AnnotationProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                         <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/relation
+<http://purl.org/dc/terms/relation> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> .
+
+
+###  http://purl.org/dc/terms/replaces
+<http://purl.org/dc/terms/replaces> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                       <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/requires
+<http://purl.org/dc/terms/requires> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/relation> ,
+                                                       <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/source> ,
+                                                     <http://purl.org/dc/terms/relation> .
+
+
+###  http://purl.org/dc/terms/spatial
+<http://purl.org/dc/terms/spatial> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> ,
+                                                      <http://purl.org/dc/terms/coverage> .
+
+
+###  http://purl.org/dc/terms/subject
+<http://purl.org/dc/terms/subject> rdf:type owl:AnnotationProperty ;
+                                   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/subject> .
+
+
+###  http://purl.org/dc/terms/tableOfContents
+<http://purl.org/dc/terms/tableOfContents> rdf:type owl:AnnotationProperty ;
+                                           rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/description> ,
+                                                              <http://purl.org/dc/terms/description> .
+
+
+###  http://purl.org/dc/terms/temporal
+<http://purl.org/dc/terms/temporal> rdf:type owl:AnnotationProperty ;
+                                    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/coverage> ,
+                                                       <http://purl.org/dc/terms/coverage> .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty ;
+                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/title> ;
+                                 rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/dc/terms/type
+<http://purl.org/dc/terms/type> rdf:type owl:AnnotationProperty ;
+                                rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/type> .
+
+
+###  http://purl.org/dc/terms/valid
+<http://purl.org/dc/terms/valid> rdf:type owl:AnnotationProperty ;
+                                 rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/date> ;
+                                 rdfs:range rdfs:Literal .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#examples
+:examples rdf:type owl:AnnotationProperty .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#preferredNamespacePrefix
+:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#preferredNamespaceUri
+:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://purl.org/dc/terms/Box
+<http://purl.org/dc/terms/Box> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO3166
+<http://purl.org/dc/terms/ISO3166> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO639-2
+<http://purl.org/dc/terms/ISO639-2> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/ISO639-3
+<http://purl.org/dc/terms/ISO639-3> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/Period
+<http://purl.org/dc/terms/Period> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/Point
+<http://purl.org/dc/terms/Point> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC1766
+<http://purl.org/dc/terms/RFC1766> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC3066
+<http://purl.org/dc/terms/RFC3066> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC4646
+<http://purl.org/dc/terms/RFC4646> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/RFC5646
+<http://purl.org/dc/terms/RFC5646> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/URI
+<http://purl.org/dc/terms/URI> rdf:type rdfs:Datatype .
+
+
+###  http://purl.org/dc/terms/W3CDTF
+<http://purl.org/dc/terms/W3CDTF> rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#correlatesWith
+:correlatesWith rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty ;
+                rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                rdfs:comment "Indicates correlation between material properties"@en ;
+                rdfs:label "correlates with"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#hasCategory
+:hasCategory rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isCategoryOf ;
+             rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+             rdfs:range :MaterialCategory ;
+             <http://purl.org/dc/elements/1.1/description> "Links a building material instance to its corresponding material category for taxonomic classification within the BIM materials hierarchy"@en ;
+             rdfs:comment "Associates a building material with its material category classification"@en ;
+             rdfs:label "has Category"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#hasExternalReferenceDatabase
+:hasExternalReferenceDatabase rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              owl:inverseOf :isExternalReferenceDatabaseOf ;
+                              rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                              rdfs:range :ExternalReferenceDatabase ;
+                              <http://purl.org/dc/elements/1.1/description> "Establishes connection between building material and external databases such as classification systems, standards, or LCA databases for extended material data"@en ;
+                              rdfs:comment "Links a building material to an external reference database for additional material information"@en ;
+                              rdfs:label "has External Reference Database"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#hasMaterial
+:hasMaterial rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :isMaterialOf ;
+             rdfs:domain :BuildingElement ;
+             rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+             <http://purl.org/dc/elements/1.1/description> "Defines the material composition relationship between building elements and their constituent materials in BIM models"@en ;
+             rdfs:comment "Associates a building element with its constituent building material"@en ;
+             rdfs:label "has Material"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#hasMaterialDefinition
+:hasMaterialDefinition rdf:type owl:ObjectProperty ;
+                       owl:inverseOf :isMaterialDefinitionOf ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                       rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> ;
+                       <http://purl.org/dc/elements/1.1/description> "Connects building materials to their comprehensive definitions including composition, layers, profiles, or constituent specifications"@en ;
+                       rdfs:comment "Links a building material to its detailed material definition specification"@en ;
+                       rdfs:label "has Material Definition"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#hasMaterialProperty
+:hasMaterialProperty rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :isPropertyOf ;
+                     rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                     rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                     <http://purl.org/dc/elements/1.1/description> "Establishes the relationship between building materials and their measurable characteristics such as mechanical, thermal, physical, or behavioral properties"@en ;
+                     rdfs:comment "Associates a building material with its specific material properties"@en ;
+                     rdfs:label "has Material Property"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#hasPrimaryCategory
+:hasPrimaryCategory rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :isPrimaryCategoryOf ;
+                    rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                    rdfs:range :MaterialCategory ;
+                    <http://purl.org/dc/elements/1.1/description> "Establishes the primary taxonomic classification relationship between building material instances and their main category types such as Wood, Concrete, Metal, or Plastic within the BIM materials hierarchy"@en ;
+                    rdfs:comment "Associates a building material with its primary category classification at the highest level of the material taxonomy"@en ;
+                    rdfs:label "has Primary Category"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#hasSecondaryCategory
+:hasSecondaryCategory rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasCategory ;
+                      owl:inverseOf :isSecondaryCategoryOf ;
+                      rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                      rdfs:range :MaterialCategory ;
+                      <http://purl.org/dc/elements/1.1/description> "Establishes the secondary taxonomic classification relationship between building material instances and their specific subcategory types such as HardWood, Standard, Steel, or Thermoplastic within the detailed BIM materials hierarchy"@en ;
+                      rdfs:comment "Associates a building material with its secondary category classification providing more specific categorization within the primary material type"@en ;
+                      rdfs:label "has Secondary Category"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#hasUnit
+:hasUnit rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isUnitOf ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+         rdfs:range <http://qudt.org/schema/qudt/Unit> ;
+         <http://purl.org/dc/elements/1.1/description> "Links material properties to their corresponding units of measurement for quantitative specification and interoperability"@en ;
+         rdfs:comment "Associates a material property with its measurement unit"@en ;
+         rdfs:label "has Unit"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#influencesProperty
+:influencesProperty rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    owl:inverseOf :isInfluencedBy ;
+                    rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                    rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                    rdfs:comment "Indicates that one property influences another"@en ;
+                    rdfs:label "influences property"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isCategoryOf
+:isCategoryOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :MaterialCategory ;
+              rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+              <http://purl.org/dc/elements/1.1/description> "Inverse relationship showing which building materials belong to a specific material category"@en ;
+              rdfs:comment "Indicates that a material category is the category of a building material"@en ,
+                           "Indicates that a material category is the classification of a building material"@en ;
+              rdfs:label "is Category Of"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isExternalReferenceDatabaseOf
+:isExternalReferenceDatabaseOf rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdfs:domain :ExternalReferenceDatabase ;
+                               rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                               <http://purl.org/dc/elements/1.1/description> "Inverse relationship showing which building materials reference a specific external database"@en ;
+                               rdfs:comment "Indicates that an external reference database provides information for a building material"@en ;
+                               rdfs:label "is External Reference Database Of"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isInfluencedBy
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                <http://purl.org/dc/elements/1.1/description> "Inverse relationship showing which properties are influenced by a specific material property"@en ;
+                rdfs:comment "Indicates that a material property is influenced by another property"@en ;
+                rdfs:label "is Influenced By"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isMaterialDefinitionOf
+:isMaterialDefinitionOf rdf:type owl:ObjectProperty ;
+                        rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> ;
+                        rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                        <http://purl.org/dc/elements/1.1/description> "Inverse relationship showing which building materials are defined by a specific material definition"@en ;
+                        rdfs:comment "Indicates that a material definition specifies the characteristics of a building material"@en ;
+                        rdfs:label "is Material Definition Of"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isMaterialOf
+:isMaterialOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+              rdfs:range :BuildingElement ;
+              <http://purl.org/dc/elements/1.1/description> "Inverse relationship showing which building elements are composed of a specific material"@en ;
+              rdfs:comment "Indicates that a building material is the constituent material of a building element"@en ;
+              rdfs:label "is Material Of"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isPrimaryCategoryOf
+:isPrimaryCategoryOf rdf:type owl:ObjectProperty ;
+                     rdfs:domain :MaterialCategory ;
+                     rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                     <http://purl.org/dc/elements/1.1/description> "Inverse relationship indicating which building materials belong to a specific primary material category classification"@en ;
+                     rdfs:comment "Indicates that a material category serves as the primary classification for building materials"@en ;
+                     rdfs:label "is Primary Category Of"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isPropertyOf
+:isPropertyOf rdf:type owl:ObjectProperty ;
+              rdfs:domain <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+              rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+              <http://purl.org/dc/elements/1.1/description> "Inverse relationship showing which building materials possess a specific property"@en ;
+              rdfs:comment "Indicates that a material property belongs to a building material"@en ;
+              rdfs:label "is Material Property Of"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isSecondaryCategoryOf
+:isSecondaryCategoryOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :isCategoryOf ;
+                       rdfs:domain :MaterialCategory ;
+                       rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ;
+                       <http://purl.org/dc/elements/1.1/description> "Inverse relationship indicating which building materials belong to a specific secondary material category classification within the detailed material taxonomy"@en ;
+                       rdfs:comment "Indicates that a material category serves as the secondary classification for building materials providing specific subcategorization"@en ;
+                       rdfs:label "is Secondary Category Of"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#isUnitOf
+:isUnitOf rdf:type owl:ObjectProperty ;
+          rdfs:domain <http://qudt.org/schema/qudt/Unit> ;
+          rdfs:range <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+          <http://purl.org/dc/elements/1.1/description> "Inverse relationship showing which material properties use a specific measurement unit"@en ;
+          rdfs:comment "Indicates that a unit is the measurement unit of a material property"@en ;
+          rdfs:label "is Unit Of"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#AssetLibraryId
+:AssetLibraryId rdf:type owl:DatatypeProperty ;
+                rdfs:domain :GeneralInformation ;
+                rdfs:range rdfs:Literal ;
+                <http://purl.org/dc/elements/1.1/description> "Provides unique identification reference for materials within organizational or commercial asset library management systems"@en ;
+                rdfs:comment "Unique identifier for material within an asset library system"@en ;
+                rdfs:label "Asset Library ID"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#AverageModulus
+:AverageModulus rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :PhysicalProperty ;
+                rdfs:range xsd:double ;
+                <http://purl.org/dc/elements/1.1/description> "Represents the mean elastic modulus calculated from multiple directional or testing values for material characterization"@en ;
+                rdfs:comment "Average elastic modulus value of the material"@en ;
+                rdfs:label "Average Modulus"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Behavior
+:Behavior rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :BehaviorProperty ;
+          rdfs:range xsd:string ;
+          <http://purl.org/dc/elements/1.1/description> "Textual description of material behavior including response to environmental conditions, loading, or chemical exposure"@en ;
+          rdfs:comment "Describes the behavioral characteristics of the material under various conditions"@en ;
+          rdfs:label "Behavior"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Bending
+:Bending rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :PhysicalProperty ;
+         rdfs:range xsd:double ;
+         <http://purl.org/dc/elements/1.1/description> "Maximum stress that the material can withstand under bending or flexural loading before failure occurs"@en ;
+         rdfs:comment "Bending strength or flexural strength of the material"@en ;
+         rdfs:label "Bending"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Class
+:Class rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdfs:domain :GeneralInformation ;
+       rdfs:range xsd:string ;
+       <http://purl.org/dc/elements/1.1/description> "Formal classification designation of the material within standardized classification systems or building codes"@en ;
+       rdfs:comment "Material class designation according to classification system"@en ;
+       rdfs:label "Class"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Compressibility
+:Compressibility rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :ThermalProperty ;
+                 rdfs:range xsd:double ;
+                 <http://purl.org/dc/elements/1.1/description> "Quantifies the relative volume change of material when subjected to uniform pressure, important for thermal and hydraulic calculations"@en ;
+                 rdfs:comment "Measure of material volume change under pressure"@en ;
+                 rdfs:label "Compressibility"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Compression
+:Compression rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :PhysicalProperty ;
+             rdfs:range xsd:double ;
+             <http://purl.org/dc/elements/1.1/description> "Maximum stress that the material can withstand under compression loading before failure, critical for structural design"@en ;
+             rdfs:comment "Compressive strength of the material"@en ;
+             rdfs:label "Compression"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#CompressionParallelToGrain
+:CompressionParallelToGrain rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty ;
+                            rdfs:domain :PhysicalProperty ;
+                            rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#CompressionPerpendiculartoGrain
+:CompressionPerpendiculartoGrain rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                 rdfs:domain :PhysicalProperty ;
+                                 rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Construction
+:Construction rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :PhysicalProperty ;
+              rdfs:range xsd:string ;
+              <http://purl.org/dc/elements/1.1/description> "Describes the construction method, manufacturing process, or assembly technique used to create the material or product"@en ;
+              rdfs:comment "Type or method of material construction or manufacturing"@en ;
+              rdfs:label "Construction"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#DatabaseName
+:DatabaseName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :ExternalReferenceDatabase ;
+              rdfs:range xsd:string ;
+              <http://purl.org/dc/elements/1.1/description> "Identifying name of external database system containing additional material information, standards, or specifications"@en ;
+              rdfs:comment "Name of the external reference database"@en ;
+              rdfs:label "Database Name"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Density
+:Density rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :MechanicalProperty ;
+         rdfs:range xsd:double ;
+         <http://purl.org/dc/elements/1.1/description> "Mass per unit volume of the material, fundamental property for structural calculations and material characterization"@en ;
+         rdfs:comment "Mass density of the material"@en ;
+         rdfs:label "Density"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Description
+:Description rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :GeneralInformation ;
+             rdfs:range xsd:string ;
+             <http://purl.org/dc/elements/1.1/description> "Comprehensive textual description providing details about material characteristics, applications, or special properties"@en ;
+             rdfs:comment "Textual description of the material"@en ;
+             rdfs:label "Description"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ElectricResistivity
+:ElectricResistivity rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :ThermalProperty ;
+                     rdfs:range xsd:double ;
+                     <http://purl.org/dc/elements/1.1/description> "Measure of material's resistance to electric current flow, important for electrical safety and conductivity analysis"@en ;
+                     rdfs:comment "Electrical resistivity of the material"@en ;
+                     rdfs:label "Electric Resistivity"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Emissivity
+:Emissivity rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :ThermalProperty ;
+            rdfs:range xsd:double ;
+            <http://purl.org/dc/elements/1.1/description> "Ratio of thermal radiation emitted by material surface to that emitted by perfect black body at same temperature"@en ;
+            rdfs:comment "Thermal emissivity coefficient of the material surface"@en ;
+            rdfs:label "Emissivity"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ExternalMaterialId
+:ExternalMaterialId rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :GeneralInformation ;
+                    rdfs:range rdfs:Literal ;
+                    <http://purl.org/dc/elements/1.1/description> "Unique identifier used by external systems, databases, or catalogs to reference this specific material"@en ;
+                    rdfs:comment "External system identifier for the material"@en ;
+                    rdfs:label "External Material ID"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#GasViscosity
+:GasViscosity rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :ThermalProperty ;
+              rdfs:range xsd:double ;
+              <http://purl.org/dc/elements/1.1/description> "Measure of resistance to flow for gaseous materials, important for ventilation and fluid dynamics calculations"@en ;
+              rdfs:comment "Dynamic viscosity of gaseous material"@en ;
+              rdfs:label "Gas Viscosity"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Keywords
+:Keywords rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :GeneralInformation ;
+          rdfs:range xsd:string ;
+          <http://purl.org/dc/elements/1.1/description> "Descriptive keywords or tags that facilitate material search, classification, and identification within BIM systems"@en ;
+          rdfs:comment "Keywords or tags associated with the material"@en ;
+          rdfs:label "Keywords"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Lightweight
+:Lightweight rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :PhysicalProperty ;
+             rdfs:range xsd:boolean .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialAssetName
+:MaterialAssetName rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :GeneralInformation ;
+                   rdfs:range xsd:string ;
+                   <http://purl.org/dc/elements/1.1/description> "Standardized asset name used for material identification within organizational asset management and procurement systems"@en ;
+                   rdfs:comment "Asset name designation of the material"@en ;
+                   rdfs:label "Material Asset Name"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialConstituent
+:MaterialConstituent rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :MaterialConstituent ;
+                     rdfs:range rdfs:Literal .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialConstituentSet
+:MaterialConstituentSet rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :MaterialConstituentSet ;
+                        rdfs:range rdfs:Literal .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialLayer
+:MaterialLayer rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MaterialLayer ;
+               rdfs:range rdfs:Literal .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialLayerSet
+:MaterialLayerSet rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :MaterialLayerSet ;
+                  rdfs:range rdfs:Literal .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialName
+:MaterialName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :GeneralInformation ;
+              rdfs:range xsd:string ;
+              <http://purl.org/dc/elements/1.1/description> "Primary identifying name of the material as commonly used in industry, commerce, or technical specifications"@en ;
+              rdfs:comment "Common or commercial name of the material"@en ;
+              rdfs:label "Material Name"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialProfile
+:MaterialProfile rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :MaterialProfile ;
+                 rdfs:range rdfs:Literal .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialProfileSet
+:MaterialProfileSet rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :MaterialProfileSet ;
+                    rdfs:range rdfs:Literal .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MeasurementSymbol
+:MeasurementSymbol rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain <http://qudt.org/schema/qudt/Unit> ;
+                   rdfs:range xsd:string ;
+                   <http://purl.org/dc/elements/1.1/description> "Standard symbol or abbreviation used to represent the measurement unit in calculations and documentation"@en ;
+                   rdfs:comment "Symbol or abbreviation for the measurement unit"@en ;
+                   rdfs:label "Measurement Symbol"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Modulus
+:Modulus rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :MechanicalProperty ;
+         rdfs:range xsd:double ;
+         <http://purl.org/dc/elements/1.1/description> "Measure of material's resistance to elastic deformation under stress, fundamental property for structural analysis"@en ;
+         rdfs:comment "Elastic modulus of the material"@en ;
+         rdfs:label "Modulus"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Permeability
+:Permeability rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :ThermalProperty ;
+              rdfs:range xsd:string ;
+              <http://purl.org/dc/elements/1.1/description> "Measure of material's ability to allow fluids or gases to pass through, important for moisture and air barrier analysis"@en ;
+              rdfs:comment "Material permeability to fluids or gases"@en ;
+              rdfs:label "Permeability"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PoissonRatioX
+:PoissonRatioX rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MechanicalProperty ;
+               rdfs:range xsd:double ;
+               rdfs:label "Poisson's Ratio X"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PoissonRatioY
+:PoissonRatioY rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MechanicalProperty ;
+               rdfs:range xsd:double ;
+               rdfs:label "Poisson's Ratio Y"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PoissonRatioZ
+:PoissonRatioZ rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MechanicalProperty ;
+               rdfs:range xsd:double ;
+               rdfs:label "Poisson's Ratio Z"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PoissonsRatio
+:PoissonsRatio rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MechanicalProperty ;
+               rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Porosity
+:Porosity rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :ThermalProperty ;
+          rdfs:range xsd:double ;
+          <http://purl.org/dc/elements/1.1/description> "Fraction of material volume occupied by pores or voids, affecting density, thermal, and mechanical properties"@en ;
+          rdfs:comment "Porosity fraction of the material"@en ;
+          rdfs:label "Porosity"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PropertySetName
+:PropertySetName rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :GeneralInformation ;
+                 rdfs:range xsd:string ;
+                 <http://purl.org/dc/elements/1.1/description> "Identifies the property set or group name that organizes related material properties within BIM property management"@en ;
+                 rdfs:comment "Name of the property set containing this property"@en ;
+                 rdfs:label "Property Set Name"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Reflectivity
+:Reflectivity rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :ThermalProperty ;
+              rdfs:range xsd:double ;
+              <http://purl.org/dc/elements/1.1/description> "Fraction of incident thermal or optical radiation reflected by material surface, important for energy and lighting analysis"@en ;
+              rdfs:comment "Thermal or optical reflectivity of material surface"@en ;
+              rdfs:label "Reflectivity"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ShearModulus
+:ShearModulus rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ShearModulusX
+:ShearModulusX rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MechanicalProperty ;
+               rdfs:range xsd:double ;
+               <http://purl.org/dc/elements/1.1/description> "Directional shear modulus in X-axis direction for anisotropic materials requiring directional property specification"@en ;
+               rdfs:comment "Shear modulus in X-direction for anisotropic materials"@en ;
+               rdfs:label "Shear Modulus X"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ShearModulusY
+:ShearModulusY rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MechanicalProperty ;
+               rdfs:range xsd:double ;
+               <http://purl.org/dc/elements/1.1/description> "Directional shear modulus in Y-axis direction for anisotropic materials requiring directional property specification"@en ;
+               rdfs:comment "Shear modulus in Y-direction for anisotropic materials"@en ;
+               rdfs:label "Shear Modulus Y"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ShearModulusZ
+:ShearModulusZ rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MechanicalProperty ;
+               rdfs:range xsd:double ;
+               <http://purl.org/dc/elements/1.1/description> "Directional shear modulus in Z-axis direction for anisotropic materials requiring directional property specification"@en ;
+               rdfs:comment "Shear modulus in Z-direction for anisotropic materials"@en ;
+               rdfs:label "Shear Modulus Z"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ShearParallelToGrain
+:ShearParallelToGrain rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain :PhysicalProperty ;
+                      rdfs:range xsd:double ;
+                      <http://purl.org/dc/elements/1.1/description> "Shear strength of wood material when shear force is applied parallel to grain direction, accounting for anisotropic behavior"@en ;
+                      rdfs:comment "Shear strength parallel to wood grain direction"@en ;
+                      rdfs:label "Shear Parallel To Grain"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ShearStrengthModification
+:ShearStrengthModification rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf owl:topDataProperty ;
+                           rdfs:domain :PhysicalProperty ;
+                           rdfs:range xsd:double ;
+                           <http://purl.org/dc/elements/1.1/description> "Factor used to modify or adjust shear strength values based on specific conditions, treatments, or safety requirements"@en ;
+                           rdfs:comment "Modification factor for shear strength calculations"@en ;
+                           rdfs:label "Shear Strength Modification"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Source
+:Source rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :GeneralInformation ;
+        rdfs:range xsd:string ;
+        <http://purl.org/dc/elements/1.1/description> "Identifies the source of material data including manufacturer, supplier, standard, or reference document"@en ;
+        rdfs:comment "Source or origin of the material information"@en ;
+        rdfs:label "Source"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Species
+:Species rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :GeneralInformation ;
+         rdfs:range xsd:string ;
+         <http://purl.org/dc/elements/1.1/description> "Specific species identification for natural materials such as wood species, stone type, or biological material classification"@en ;
+         rdfs:comment "Species designation of natural materials"@en ;
+         rdfs:label "Species"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#SpecificHeat
+:SpecificHeat rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain :ThermalProperty ;
+              rdfs:range xsd:double ;
+              <http://purl.org/dc/elements/1.1/description> "Amount of heat energy required to raise temperature of unit mass of material by one degree, critical for thermal analysis"@en ;
+              rdfs:comment "Specific heat capacity of the material"@en ;
+              rdfs:label "Specific Heat"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#StrengthGrade
+:StrengthGrade rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :PhysicalProperty ;
+               rdfs:range xsd:double ;
+               <http://purl.org/dc/elements/1.1/description> "Standardized strength classification grade assigned to material based on testing and classification standards"@en ;
+               rdfs:comment "Strength grade classification of the material"@en ;
+               rdfs:label "Strength Grade"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Subclass
+:Subclass rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :GeneralInformation ;
+          rdfs:range xsd:string ;
+          <http://purl.org/dc/elements/1.1/description> "Specific subclass designation within broader material classification hierarchy for detailed material categorization"@en ;
+          rdfs:comment "Material subclass within broader classification"@en ;
+          rdfs:label "Subclass"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#TensileStrength
+:TensileStrength rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf owl:topDataProperty ;
+                 rdfs:domain :PhysicalProperty ;
+                 rdfs:range xsd:double ;
+                 <http://purl.org/dc/elements/1.1/description> "Maximum stress that material can withstand under tension loading before failure, fundamental structural property"@en ;
+                 rdfs:comment "Tensile strength of the material"@en ;
+                 rdfs:label "Tensile Strength"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#TensionParallelToGrain
+:TensionParallelToGrain rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain :PhysicalProperty ;
+                        rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#TensionPerpendicularToGrain
+:TensionPerpendicularToGrain rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdfs:domain :PhysicalProperty ;
+                             rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalConductivity
+:ThermalConductivity rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain :ThermalProperty ;
+                     rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalExpansionCoefficient
+:ThermalExpansionCoefficient rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty ;
+                             rdfs:domain :ThermalProperty ;
+                             rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalExpansionCoefficientX
+:ThermalExpansionCoefficientX rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdfs:domain :ThermalProperty ;
+                              rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalExpansionCoefficientY
+:ThermalExpansionCoefficientY rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdfs:domain :ThermalProperty ;
+                              rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalExpansionCoefficientZ
+:ThermalExpansionCoefficientZ rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdfs:domain :ThermalProperty ;
+                              rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermallyTreated
+:ThermallyTreated rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :PhysicalProperty ;
+                  rdfs:range xsd:boolean ;
+                  <http://purl.org/dc/elements/1.1/description> "Boolean indicator specifying if material has been subjected to thermal treatment processes affecting its properties"@en ;
+                  rdfs:comment "Indicates whether material has undergone thermal treatment"@en ;
+                  rdfs:label "Thermally Treated"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#TransmitLight
+:TransmitLight rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :ThermalProperty ;
+               rdfs:range xsd:boolean ;
+               <http://purl.org/dc/elements/1.1/description> "Boolean indicator specifying if material allows light transmission, important for glazing and transparency analysis"@en ;
+               rdfs:comment "Indicates whether material can transmit light"@en ;
+               rdfs:label "Transmit Light"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#URL
+:URL rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdfs:domain :GeneralInformation ;
+     rdfs:range xsd:string ;
+     <http://purl.org/dc/elements/1.1/description> "Universal Resource Locator providing web-based access to additional material information, specifications, or documentation"@en ;
+     rdfs:comment "Web URL reference for additional material information"@en ;
+     rdfs:label "URL"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#UniqueIdentifier
+:UniqueIdentifier rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :GeneralInformation ;
+                  rdfs:range rdfs:Literal ;
+                  <http://purl.org/dc/elements/1.1/description> "Universally unique identifier ensuring global uniqueness for material identification across different systems and databases"@en ;
+                  rdfs:comment "Globally unique identifier for the material"@en ;
+                  rdfs:label "Unique Identifier"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#UnitWeight
+:UnitWeight rdf:type owl:DatatypeProperty ;
+            rdfs:domain :PhysicalProperty ;
+            rdfs:range xsd:double ;
+            <http://purl.org/dc/elements/1.1/description> "Weight per unit volume of material, accounting for gravitational effects, used in structural load calculations"@en ;
+            rdfs:comment "Unit weight or specific weight of the material"@en ;
+            rdfs:label "Unit Weight"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YieldStrength
+:YieldStrength rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :PhysicalProperty ;
+               rdfs:range xsd:double ;
+               <http://purl.org/dc/elements/1.1/description> "Stress level at which material begins plastic deformation, critical for structural design and safety calculations"@en ;
+               rdfs:comment "Yield strength of the material"@en ;
+               rdfs:label "Yield Strength"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YoungsModulus
+:YoungsModulus rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :MechanicalProperty ;
+               rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YoungsModulusX
+:YoungsModulusX rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :MechanicalProperty ;
+                rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YoungsModulusY
+:YoungsModulusY rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :MechanicalProperty ;
+                rdfs:range xsd:double .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YoungsModulusZ
+:YoungsModulusZ rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :MechanicalProperty ;
+                rdfs:range xsd:double .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://qudt.org/schema/qudt/Unit
+<http://qudt.org/schema/qudt/Unit> rdf:type owl:Class ;
+                                   owl:disjointWith :BuildingElement ,
+                                                    :ExternalReferenceDatabase ,
+                                                    :MaterialCategory ,
+                                                    <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ,
+                                                    <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> ,
+                                                    <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                                   :examples " Square meters for area, Kilograms for weight             " ;
+                                   rdfs:comment " Represents the unit of measurement for various material properties, ensuring consistency in calculations." ;
+                                   rdfs:label "Unit"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#AcousticCeilingTile
+:AcousticCeilingTile rdf:type owl:Class ;
+                     rdfs:subClassOf :Ceiling ;
+                     :examples " Acoustic tiles for theaters, Sound-absorbing ceiling panels     " ;
+                     rdfs:comment " Represents acoustic ceiling tile materials designed to absorb sound and improve room acoustics.   " ;
+                     rdfs:label "Acoustic Ceiling Tile" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Aluminum
+:Aluminum rdf:type owl:Class ;
+          rdfs:subClassOf :Metal ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Density ;
+                            owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                owl:onDatatype xsd:double ;
+                                                owl:withRestrictions ( [ xsd:minInclusive "2680.0"^^xsd:double
+                                                                       ]
+                                                                       [ xsd:maxInclusive "2810.0"^^xsd:double
+                                                                       ]
+                                                                     )
+                                              ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :TensileStrength ;
+                            owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                owl:onDatatype xsd:double ;
+                                                owl:withRestrictions ( [ xsd:minInclusive "89.6"^^xsd:double
+                                                                       ]
+                                                                       [ xsd:maxInclusive "455.1"^^xsd:double
+                                                                       ]
+                                                                     )
+                                              ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :YieldStrength ;
+                            owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                owl:onDatatype xsd:double ;
+                                                owl:withRestrictions ( [ xsd:minInclusive "34.5"^^xsd:double
+                                                                       ]
+                                                                       [ xsd:maxInclusive "399.9"^^xsd:double
+                                                                       ]
+                                                                     )
+                                              ]
+                          ] ;
+          :examples "Aluminum sheets for roofing, Extruded aluminum profiles for windows" ;
+          rdfs:comment "Represents aluminum materials, known for their lightweight and corrosion-resistant properties used in various construction applications."@en ;
+          rdfs:label "Aluminum"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Asphalt
+:Asphalt rdf:type owl:Class ;
+         rdfs:subClassOf :MaterialCategory ;
+         <http://purl.org/dc/elements/1.1/description> "Category of bituminous materials derived from petroleum, commonly used in road construction, roofing, and waterproofing applications"@en ;
+         rdfs:comment "Petroleum-based materials used in construction and paving applications"@en ;
+         rdfs:label "Asphalt"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#AsphaltBitumen
+:AsphaltBitumen rdf:type owl:Class ;
+                rdfs:subClassOf :Asphalt ;
+                :examples " Bituminous roofing shingles, Asphalt bitumen for road repairs  " ;
+                rdfs:comment " Represents asphalt bitumen materials used in road construction and roofing applications.           " ;
+                rdfs:label "Asphalt Bitumen" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#AsphaltPaving
+:AsphaltPaving rdf:type owl:Class ;
+               rdfs:subClassOf :Asphalt ;
+               :examples " Asphalt layers for roadways, Asphalt pavement for parking lots  " ;
+               rdfs:comment " Represents asphalt paving materials used for road construction and surfacing.                      " ;
+               rdfs:label "Asphalt Paving" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#AsphaltShingle
+:AsphaltShingle rdf:type owl:Class ;
+                rdfs:subClassOf :Asphalt ;
+                :examples " Asphalt shingles for pitched roofs, Architectural asphalt shingles " ;
+                rdfs:comment " Represents asphalt shingle materials used for roofing applications due to their weather resistance." ;
+                rdfs:label "Asphalt Shingle" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Bamboo
+:Bamboo rdf:type owl:Class ;
+        rdfs:subClassOf :Flooring ;
+        :examples " Bamboo planks for eco-friendly flooring, Bamboo flooring tiles      " ;
+        rdfs:comment " Represents bamboo flooring materials, known for their sustainable and durable properties.        " ;
+        rdfs:label "Bamboo" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#BehaviorProperty
+:BehaviorProperty rdf:type owl:Class ;
+                  rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                  <http://purl.org/dc/elements/1.1/description> "Material characteristics that describe how materials behave under various environmental conditions, loading scenarios, or chemical exposures, including fire resistance and elasticity"@en ;
+                  :examples "Fire resistance of insulation, Elasticity of rubber materials" ;
+                  rdfs:comment "Properties describing material response to external conditions and influences"@en ;
+                  rdfs:label "Behavior Property" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#BrickAdobe
+:BrickAdobe rdf:type owl:Class ;
+            rdfs:subClassOf :Masonry ;
+            :examples " Adobe bricks for energy-efficient buildings, Earthy-toned adobe walls " ;
+            rdfs:comment " Represents adobe brick materials, made from sun-dried clay and commonly used in hot climates.    " ;
+            rdfs:label "Brick Adobe " .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#BrickCommon
+:BrickCommon rdf:type owl:Class ;
+             rdfs:subClassOf :Masonry ;
+             :examples " Red clay bricks for exterior walls, Traditional brick pavements   " ;
+             rdfs:comment " Represents common brick materials, used for various construction applications.                      " ;
+             rdfs:label "Brick Common" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#BrickCored
+:BrickCored rdf:type owl:Class ;
+            rdfs:subClassOf :Masonry ;
+            :examples "  Brick blocks with hollow cores for walls, Insulated cored brick materials " ;
+            rdfs:comment " Represents cored brick materials with hollow cores that provide insulation and reduce weight.    " ;
+            rdfs:label "Brick Cored" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#BrickPavers
+:BrickPavers rdf:type owl:Class ;
+             rdfs:subClassOf :Masonry ;
+             :examples " Interlocking brick pavers for sidewalks, Clay brick pavers for patios " ;
+             rdfs:comment " Represents brick paver materials used for pathways, driveways, and outdoor areas.                   " ;
+             rdfs:label "Brick Pavers" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#BuildingElement
+:BuildingElement rdf:type owl:Class ;
+                 owl:disjointWith :ExternalReferenceDatabase ,
+                                  :MaterialCategory ,
+                                  <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ,
+                                  <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> ,
+                                  <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                 rdfs:comment "The building element comprises all elements that are primarily part of the construction of a built facility, i.e., its structural and space separating system. Building elements are all physically existent and tangible things. Major functional part of a building, examples are foundation, floor, roof, wall. (https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcbuildingelement.htm)" ;
+                 rdfs:label "Building Element" ;
+                 rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcproductextension/lexical/ifcbuildingelement.htm"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Carpet
+:Carpet rdf:type owl:Class ;
+        rdfs:subClassOf :Fabric ;
+        <http://purl.org/dc/elements/1.1/description> "Textile floor covering materials that provide thermal comfort, acoustic dampening, and aesthetic enhancement in interior spaces"@en ;
+        rdfs:comment "Textile floor covering materials providing comfort and acoustic properties"@en ;
+        rdfs:label "Carpet"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Ceiling
+:Ceiling rdf:type owl:Class ;
+         rdfs:subClassOf :MaterialCategory ;
+         rdfs:label "Ceiling"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Ceramic
+:Ceramic rdf:type owl:Class ;
+         rdfs:subClassOf :MaterialCategory ;
+         :examples " Porcelain tiles, Decorative ceramic artworks, Ceramic tableware     " ;
+         rdfs:comment " Represents ceramic materials, known for their heat resistance and decorative properties.         " ;
+         rdfs:label "Ceramic" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ClassificationSystem
+:ClassificationSystem rdf:type owl:Class ;
+                      rdfs:subClassOf :ExternalReferenceDatabase ;
+                      <http://purl.org/dc/elements/1.1/description> "Systematic frameworks for categorizing materials according to standardized criteria, providing consistent classification schemes for material identification and specification"@en ;
+                      rdfs:comment "Standardized systems for categorizing and organizing material information"@en ;
+                      rdfs:label "Classification System"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Composite
+:Composite rdf:type owl:Class ;
+           rdfs:subClassOf :Plastic ;
+           :examples "Composite decking, Reinforced plastic composites, CFRP, GFRP, Laminates" ;
+           rdfs:comment "Represents composite plastic materials made by combining different plastics or plastic with other materials, including CFRP, GFRP, and Laminates."@en ;
+           rdfs:label "Composite"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Concrete
+:Concrete rdf:type owl:Class ;
+          rdfs:subClassOf :MaterialCategory ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Compression ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Density ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Bending ;
+                            owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Species ;
+                            owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                          ] ;
+          :examples "Reinforced concrete for structural elements, Lightweight concrete for insulation, Concrete used in various construction applications" ;
+          rdfs:comment "Represents concrete materials, a versatile building material composed of cement, aggregates, and water, used extensively in construction applications."@en ;
+          rdfs:label "Concrete"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#CorkTiles
+:CorkTiles rdf:type owl:Class ;
+           rdfs:subClassOf :Flooring ;
+           :examples " Cork tiles for quiet and comfortable flooring, Cork flooring roll   " ;
+           rdfs:comment " Represents cork tile flooring materials, valued for their insulation and soundproofing qualities." ;
+           rdfs:label "Cork Tiles" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#CountrySpecificStandard
+:CountrySpecificStandard rdf:type owl:Class ;
+                         rdfs:subClassOf :ExternalReferenceDatabase ;
+                         <http://purl.org/dc/elements/1.1/description> "Standards, codes, and regulations specific to individual countries that govern material properties, testing methods, and acceptable usage in construction applications"@en ;
+                         rdfs:comment "National standards and codes governing material specifications and usage"@en ;
+                         rdfs:label "Country Specific Standard"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#DampProofing
+:DampProofing rdf:type owl:Class ;
+              rdfs:subClassOf :Miscellaneous ;
+              :examples " Bitumen coatings for waterproofing, Damp-proof membranes         " ;
+              rdfs:comment " Represents damp-proofing materials applied to building surfaces to prevent moisture penetration.   " ;
+              rdfs:label "Damp Proofing" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Earth
+:Earth rdf:type owl:Class ;
+       rdfs:subClassOf :Miscellaneous ;
+       :examples " Topsoil for landscaping, Earth fill for embankments            " ;
+       rdfs:comment " Represents earth materials used for construction, landscaping, and earthworks.                    " ;
+       rdfs:label "Earth" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Elastomer
+:Elastomer rdf:type owl:Class ;
+           rdfs:subClassOf :Plastic ;
+           :examples "Rubber gaskets for sealing, Elastomeric waterproofing materials, Various rubber types" ;
+           rdfs:comment "Represents elastomer plastic materials with elastic properties, used for seals and gaskets, including various rubber types."@en ;
+           rdfs:label "Elastomer"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#EngineeredWood
+:EngineeredWood rdf:type owl:Class ;
+                rdfs:subClassOf :Wood ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :StrengthGrade ;
+                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                <http://purl.org/dc/elements/1.1/description> "Wood materials manufactured by binding or fixing wood strands, particles, fibers, or veneers together with adhesives to form composite lumber products with engineered properties"@en ;
+                rdfs:comment "Manufactured wood products created by binding wood strands, fibers, or veneers"@en ;
+                rdfs:label "Engineered Wood"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Expanded
+:Expanded rdf:type owl:Class ;
+          rdfs:subClassOf :Plastic ;
+          :examples "Expanded polystyrene (EPS) insulation panels, Foam packaging, Polystyrene Expanded" ;
+          rdfs:comment "Represents expanded plastic materials used for insulation, packaging, and lightweight construction, including materials such as Polystyrene Expanded."@en ;
+          rdfs:label "Expanded"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ExternalReferenceDatabase
+:ExternalReferenceDatabase rdf:type owl:Class ;
+                           owl:disjointWith :MaterialCategory ,
+                                            <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ,
+                                            <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> ,
+                                            <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                           <http://purl.org/dc/elements/1.1/description> "Represents external reference systems including classification systems, standards databases, and LCA databases that provide supplementary material information for BIM interoperability"@en ;
+                           rdfs:comment "External database systems providing additional material information and specifications"@en ;
+                           rdfs:label "External Reference Database"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Fabric
+:Fabric rdf:type owl:Class ;
+        rdfs:subClassOf :MaterialCategory ;
+        <http://purl.org/dc/elements/1.1/description> "Category of woven or non-woven textile materials used in construction for applications such as geotextiles, architectural fabrics, and interior finishes"@en ;
+        rdfs:comment "Textile materials used in construction and architectural applications"@en ;
+        rdfs:label "Fabric"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#FabricCotton
+:FabricCotton rdf:type owl:Class ;
+              rdfs:subClassOf :Fabric ;
+              <http://purl.org/dc/elements/1.1/description> "Natural fiber textile materials made from cotton, used in construction for applications such as insulation backing, geotextiles, and architectural fabric elements"@en ;
+              rdfs:comment "Cotton-based textile materials used in construction applications"@en ;
+              rdfs:label "Fabric Cotton"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#FiberReinforced
+:FiberReinforced rdf:type owl:Class ;
+                 rdfs:subClassOf :Concrete ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :Compression ;
+                                   owl:hasValue "60.0"^^xsd:double
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :Density ;
+                                   owl:hasValue "1700.0"^^xsd:double
+                                 ] ;
+                 :examples "Concrete beams with embedded fiberglass, Fiber-reinforced concrete panels, Concrete materials enhanced with fibers for superior strength" ;
+                 rdfs:comment "Represents fiber-reinforced concrete materials, enhanced with fibers for improved strength and durability in advanced construction applications."@en ;
+                 rdfs:label "Fiber Reinforced"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Flooring
+:Flooring rdf:type owl:Class ;
+          rdfs:subClassOf :MaterialCategory ;
+          :examples " Hardwood flooring for elegant interiors, Vinyl tiles for easy maintenance " ;
+          rdfs:comment " Represents flooring materials used to cover interior or exterior surfaces.                         " ;
+          rdfs:label "Flooring" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Gas
+:Gas rdf:type owl:Class ;
+     rdfs:subClassOf :MaterialCategory ;
+     <http://purl.org/dc/elements/1.1/description> "Category of gaseous substances used in building systems including natural gas for heating, refrigerant gases for HVAC systems, and inert gases for specialized applications"@en ;
+     :examples " Natural gas used for heating and cooking, Propane gas for grilling " ;
+     rdfs:comment "Gaseous materials used in building systems and energy applications"@en ,
+                  " Represents gas materials, often used for energy and heating purposes.                              " ;
+     rdfs:label "Gas" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#GeneralInformation
+:GeneralInformation rdf:type owl:Class ;
+                    rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                    <http://purl.org/dc/elements/1.1/description> "Informational properties providing material identification, classification, source information, and metadata necessary for material management and specification within BIM systems"@en ;
+                    :examples " Manufacturer details for a product, Material source information " ;
+                    rdfs:comment " Represents informational properties of materials, such as manufacturer information and origin.     " ;
+                    rdfs:label "General Information"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#GenericCeramic
+:GenericCeramic rdf:type owl:Class ;
+                rdfs:subClassOf :Ceramic ;
+                :examples " Basic ceramic tile, Ceramic sculpture                              " ;
+                rdfs:comment " Represents generic ceramic materials with common attributes shared among ceramics.               " ;
+                rdfs:label "Generic Ceramic" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Glass
+:Glass rdf:type owl:Class ;
+       rdfs:subClassOf :MaterialCategory ;
+       <http://purl.org/dc/elements/1.1/description> "Category of amorphous solid materials characterized by transparency or translucency, used in windows, facades, and architectural elements"@en ;
+       :examples " Tempered glass for safety in windows, Stained glass for artistic panels " ;
+       rdfs:comment " Represents glass materials, known for their transparency and versatility in design.                " ;
+       rdfs:label "Glass" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Gravel
+:Gravel rdf:type owl:Class ;
+        rdfs:subClassOf :Miscellaneous ;
+        :examples " Crushed stone aggregate for concrete, Decorative gravel for paths " ;
+        rdfs:comment " Represents gravel materials commonly used in construction and road-building projects.             " ;
+        rdfs:label "Gravel" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#GypsumWallBoard
+:GypsumWallBoard rdf:type owl:Class ;
+                 rdfs:subClassOf :Miscellaneous ;
+                 <http://purl.org/dc/elements/1.1/description> "Manufactured building material consisting of gypsum plaster core enclosed in paper facings, used primarily for interior wall and ceiling construction"@en ;
+                 rdfs:comment "Gypsum-based panel materials used for interior wall and ceiling construction"@en ;
+                 rdfs:label "Gypsum Wall Board"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#HardWood
+:HardWood rdf:type owl:Class ;
+          rdfs:subClassOf :Wood ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Species ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          owl:disjointWith :SoftWood ;
+          :examples "Mahogany wood for cabinetry, Maple wood for flooring" ;
+          rdfs:comment "Represents hardwood materials known for their density and durability, commonly used in fine woodworking." ;
+          rdfs:label "Hard Wood" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#HighStrength
+:HighStrength rdf:type owl:Class ;
+              rdfs:subClassOf :Concrete ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :Compression ;
+                                owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                    owl:onDatatype xsd:double ;
+                                                    owl:withRestrictions ( [ xsd:minInclusive "45.0"^^xsd:double
+                                                                           ]
+                                                                           [ xsd:maxInclusive "90.0"^^xsd:double
+                                                                           ]
+                                                                         )
+                                                  ]
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :Density ;
+                                owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                    owl:onDatatype xsd:double ;
+                                                    owl:withRestrictions ( [ xsd:minInclusive "2406.45"^^xsd:double
+                                                                           ]
+                                                                           [ xsd:maxInclusive "2407.31"^^xsd:double
+                                                                           ]
+                                                                         )
+                                                  ]
+                              ] ;
+              :examples "High-strength concrete columns, Precast high-strength concrete panels, Concrete materials with superior load-bearing capacity" ;
+              rdfs:comment "Represents high-strength concrete materials, known for their increased load-bearing capacity and superior structural performance in demanding construction applications."@en ;
+              rdfs:label "High Strength"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Insulation
+:Insulation rdf:type owl:Class ;
+            rdfs:subClassOf :MaterialCategory ;
+            <http://purl.org/dc/elements/1.1/description> "Category of materials specifically designed to provide thermal, acoustic, or electrical insulation in building assemblies to improve energy performance and occupant comfort"@en ;
+            :examples " Fiberglass insulation for walls, Foam board insulation for roofs  " ;
+            rdfs:comment " Represents insulation materials used to reduce heat transfer and improve energy efficiency.       " ;
+            rdfs:label "Insulation" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#InternationalStandard
+:InternationalStandard rdf:type owl:Class ;
+                       rdfs:subClassOf :ExternalReferenceDatabase ;
+                       <http://purl.org/dc/elements/1.1/description> "International standards and specifications such as ISO, ASTM, or EN standards that provide globally recognized criteria for material properties, testing, and quality assurance"@en ;
+                       rdfs:comment "Globally recognized standards for material specifications and testing"@en ;
+                       rdfs:label "International Standard"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Iron
+:Iron rdf:type owl:Class ;
+      rdfs:subClassOf :Metal ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :Density ;
+                        owl:hasValue "7150.0"^^xsd:double
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :TensileStrength ;
+                        owl:hasValue "884.0"^^xsd:double
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :YieldStrength ;
+                        owl:hasValue "758.0"^^xsd:double
+                      ] ;
+      :examples "Wrought iron for ornamental railings, Structural iron beams, Cast iron for various structural applications" ;
+      rdfs:comment "Represents iron materials, often used for structural elements due to their strength and durability in construction and architectural applications."@en ;
+      rdfs:label "Iron"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#LCADatabase
+:LCADatabase rdf:type owl:Class ;
+             rdfs:subClassOf :ExternalReferenceDatabase ;
+             <http://purl.org/dc/elements/1.1/description> "Databases containing Life Cycle Assessment data that quantify environmental impacts of materials throughout their lifecycle from extraction to disposal, supporting sustainable design decisions"@en ;
+             rdfs:comment "Life Cycle Assessment databases containing environmental impact data for materials"@en ;
+             rdfs:label "LCA Database"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Leather
+:Leather rdf:type owl:Class ;
+         rdfs:subClassOf :Miscellaneous ;
+         <http://purl.org/dc/elements/1.1/description> "Material made from processed animal hides, used in specialized architectural applications such as decorative panels, seating, and acoustic treatments"@en ;
+         rdfs:comment "Processed animal hide materials used in construction and architectural applications"@en ;
+         rdfs:label "Leather"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Lightweight
+:Lightweight rdf:type owl:Class ;
+             rdfs:subClassOf :Concrete ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :Compression ;
+                               owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                   owl:onDatatype xsd:double ;
+                                                   owl:withRestrictions ( [ xsd:minInclusive "27.6"^^xsd:double
+                                                                          ]
+                                                                          [ xsd:maxInclusive "50.0"^^xsd:double
+                                                                          ]
+                                                                        )
+                                                 ]
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :Density ;
+                               owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                   owl:onDatatype xsd:double ;
+                                                   owl:withRestrictions ( [ xsd:minInclusive "1762.03"^^xsd:double
+                                                                          ]
+                                                                          [ xsd:maxInclusive "1764.11"^^xsd:double
+                                                                          ]
+                                                                        )
+                                                 ]
+                             ] .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Liquid
+:Liquid rdf:type owl:Class ;
+        rdfs:subClassOf :MaterialCategory ;
+        <http://purl.org/dc/elements/1.1/description> "Category of liquid substances used in construction including water for concrete mixing, liquid coatings, sealants, and fluids for building systems"@en ;
+        :examples " Water for mixing concrete, Paint for finishing surfaces         " ;
+        rdfs:comment " Represents liquid materials, typically used for various construction processes.                     " ;
+        rdfs:label "Liquid" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Masonry
+:Masonry rdf:type owl:Class ;
+         rdfs:subClassOf :MaterialCategory ;
+         :examples " Clay bricks for traditional walls, Concrete blocks for modern structures " ;
+         rdfs:comment " Represents masonry materials, used for building walls, structures, and decorative elements.       " ;
+         rdfs:label "Masonry" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialCategory
+:MaterialCategory rdf:type owl:Class ;
+                  owl:disjointWith <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> ,
+                                   <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> ,
+                                   <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                  :examples " Concrete materials for structural components, Metal materials for framing   " ;
+                  rdfs:comment " Represents different categories of building materials, facilitating classification and selection." ;
+                  rdfs:label "Material Category" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialConstituent
+:MaterialConstituent rdf:type owl:Class ;
+                     rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialConstituentSet
+:MaterialConstituentSet rdf:type owl:Class ;
+                        rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialLayer
+:MaterialLayer rdf:type owl:Class ;
+               rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialLayerSet
+:MaterialLayerSet rdf:type owl:Class ;
+                  rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialProfile
+:MaterialProfile rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MaterialProfileSet
+:MaterialProfileSet rdf:type owl:Class ;
+                    rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#MechanicalProperty
+:MechanicalProperty rdf:type owl:Class ;
+                    rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                    <http://purl.org/dc/elements/1.1/description> "Quantitative properties characterizing material response to mechanical forces including elastic moduli, strength parameters, and deformation characteristics essential for structural analysis"@en ;
+                    :examples " Tensile strength of steel, Elastic modulus of concrete      " ;
+                    rdfs:comment " Represents mechanical properties of materials, such as strength, elasticity, and hardness.        " ;
+                    rdfs:label "Mechanical Property" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Metal
+:Metal rdf:type owl:Class ;
+       rdfs:subClassOf :MaterialCategory ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :Density ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :TensileStrength ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :YieldStrength ;
+                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       :examples "Steel beams for structural frames, Aluminum panels for facades, Metal materials used in construction applications" ;
+       rdfs:comment "Represents metal materials, valued for their strength, durability, and diverse applications used in construction."@en ;
+       rdfs:label "Metal"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Miscellaneous
+:Miscellaneous rdf:type owl:Class ;
+               rdfs:subClassOf :MaterialCategory ;
+               :examples " Sand for concrete mix, Gravel for road construction             " ;
+               rdfs:comment " Represents miscellaneous materials, covering a wide range of construction-related substances.       " ;
+               rdfs:label "Miscellaneous" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#NonFerrous
+:NonFerrous rdf:type owl:Class ;
+            rdfs:subClassOf :Metal ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :Density ;
+                              owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                  owl:onDatatype xsd:double ;
+                                                  owl:withRestrictions ( [ xsd:minInclusive "1740.0"^^xsd:double
+                                                                         ]
+                                                                         [ xsd:maxInclusive "21450.0"^^xsd:double
+                                                                         ]
+                                                                       )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :TensileStrength ;
+                              owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                  owl:onDatatype xsd:double ;
+                                                  owl:withRestrictions ( [ xsd:minInclusive "18.0"^^xsd:double
+                                                                         ]
+                                                                         [ xsd:maxInclusive "415.0"^^xsd:double
+                                                                         ]
+                                                                       )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :YieldStrength ;
+                              owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                  owl:onDatatype xsd:double ;
+                                                  owl:withRestrictions ( [ xsd:minInclusive "9.0"^^xsd:double
+                                                                         ]
+                                                                         [ xsd:maxInclusive "275.6"^^xsd:double
+                                                                         ]
+                                                                       )
+                                                ]
+                            ] ;
+            :examples "Copper pipes for plumbing, Brass hardware for architectural details, Metals that do not contain iron" ;
+            rdfs:comment "Represents non-ferrous metal materials, including metals that do not contain iron, with diverse applications in construction and architecture."@en ;
+            rdfs:label "NonFerrous"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Paper
+:Paper rdf:type owl:Class ;
+       rdfs:subClassOf :Miscellaneous ;
+       :examples " Building paper for underlayment, Paper insulation for walls   " ;
+       rdfs:comment " Represents paper materials used in various construction applications, including moisture barriers." ;
+       rdfs:label "Paper" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PhysicalProperty
+:PhysicalProperty rdf:type owl:Class ;
+                  rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                  <http://purl.org/dc/elements/1.1/description> "Fundamental physical characteristics of materials including density, color, porosity, and strength properties that define material identity and basic performance characteristics"@en ;
+                  :examples " Density of wood, Color of paint, Porosity of concrete       " ;
+                  rdfs:comment " Represents physical properties of materials, including density, color, and porosity.               " ;
+                  rdfs:label "Physical Property" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Plaster
+:Plaster rdf:type owl:Class ;
+         rdfs:subClassOf :MaterialCategory ;
+         <http://purl.org/dc/elements/1.1/description> "Category of coating materials applied as wet paste that hardens to provide smooth or textured finishes on walls, ceilings, and architectural elements"@en ;
+         :examples " Gypsum plaster for smooth walls, Lime plaster for historical preservation " ;
+         rdfs:comment "Coating materials applied to walls and ceilings for finishing and protection"@en ,
+                      " Represents plaster materials used for wall finishing and decorative treatments.                     " ;
+         rdfs:label "Plaster" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Plastic
+:Plastic rdf:type owl:Class ;
+         rdfs:subClassOf :MaterialCategory ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :AverageModulus ;
+                           owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Bending ;
+                           owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Compression ;
+                           owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :Species ;
+                           owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :StrengthGrade ;
+                           owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                         ] ;
+         :examples "PVC pipes for plumbing, Plastic panels for cladding" ;
+         rdfs:comment "Represents plastic materials known for their versatility and wide range of applications."@en ;
+         rdfs:label "Plastic"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Sand
+:Sand rdf:type owl:Class ;
+      rdfs:subClassOf :Miscellaneous ;
+      :examples " Sand for concrete mix, Fine sand for plastering                " ;
+      rdfs:comment " Represents sand materials commonly used as a key ingredient in concrete and mortar mixes.         " ;
+      rdfs:label "Sand" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#SoftWood
+:SoftWood rdf:type owl:Class ;
+          rdfs:subClassOf :Wood ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Species ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          :examples "Pine wood for framing, Cedar wood for siding" ;
+          rdfs:comment "Represents softwood materials commonly used in construction due to their abundance and versatility." ;
+          rdfs:label "Soft Wood" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Standard
+:Standard rdf:type owl:Class ;
+          rdfs:subClassOf :Concrete ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Compression ;
+                            owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                owl:onDatatype xsd:double ;
+                                                owl:withRestrictions ( [ xsd:minInclusive "7.5"^^xsd:double
+                                                                       ]
+                                                                       [ xsd:maxInclusive "45.0"^^xsd:double
+                                                                       ]
+                                                                     )
+                                              ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :Density ;
+                            owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                owl:onDatatype xsd:double ;
+                                                owl:withRestrictions ( [ xsd:minInclusive "2406.45"^^xsd:double
+                                                                       ]
+                                                                       [ xsd:maxInclusive "2407.31"^^xsd:double
+                                                                       ]
+                                                                     )
+                                              ]
+                          ] ;
+          :examples "Regular concrete mix for general use, Standard concrete blocks, Concrete materials for general construction applications" ;
+          rdfs:comment "Represents standard concrete materials, widely used in various construction applications, providing reliable performance for everyday building needs."@en ;
+          rdfs:label "Standard"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Steel
+:Steel rdf:type owl:Class ;
+       rdfs:subClassOf :Metal ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :Density ;
+                         owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                             owl:onDatatype xsd:double ;
+                                             owl:withRestrictions ( [ xsd:minInclusive "7849.05"^^xsd:double
+                                                                    ]
+                                                                    [ xsd:maxInclusive "8000.0"^^xsd:double
+                                                                    ]
+                                                                  )
+                                           ]
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :TensileStrength ;
+                         owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                             owl:onDatatype xsd:double ;
+                                             owl:withRestrictions ( [ xsd:minInclusive "345.0"^^xsd:double
+                                                                    ]
+                                                                    [ xsd:maxInclusive "689.5"^^xsd:double
+                                                                    ]
+                                                                  )
+                                           ]
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :YieldStrength ;
+                         owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                             owl:onDatatype xsd:double ;
+                                             owl:withRestrictions ( [ xsd:minInclusive "207.0"^^xsd:double
+                                                                    ]
+                                                                    [ xsd:maxInclusive "517.1"^^xsd:double
+                                                                    ]
+                                                                  )
+                                           ]
+                       ] ;
+       :examples "Structural steel beams for skyscrapers, Steel reinforcement bars, Steel materials used in various construction applications" ;
+       rdfs:comment "Represents steel materials, widely used in construction for their strength, versatility, and critical role in structural engineering."@en ;
+       rdfs:label "Steel"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Stone
+:Stone rdf:type owl:Class ;
+       rdfs:subClassOf :MaterialCategory ;
+       <http://purl.org/dc/elements/1.1/description> "Category of natural geological materials quarried or extracted for use in construction, including dimensional stone, aggregates, and decorative applications"@en ;
+       :examples " Marble slabs for elegant interiors, Limestone for architectural facades " ;
+       rdfs:comment "Natural rock materials used in construction and architectural applications"@en ,
+                    " Represents stone materials known for their durability, natural aesthetics, and structural strength." ;
+       rdfs:label "Stone" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Terrazzo
+:Terrazzo rdf:type owl:Class ;
+          rdfs:subClassOf :Flooring ;
+          :examples " Terrazzo tiles with embedded glass chips, Polished terrazzo floors " ;
+          rdfs:comment " Represents terrazzo flooring materials, often used for decorative and durable surfaces.          " ;
+          rdfs:label "Terrazzo" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalProperty
+:ThermalProperty rdf:type owl:Class ;
+                 rdfs:subClassOf <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                 <http://purl.org/dc/elements/1.1/description> "Quantitative properties characterizing material thermal performance including heat capacity, thermal conductivity, expansion coefficients, and surface thermal properties for energy analysis"@en ;
+                 :examples " Thermal conductivity of metals, Specific heat of ceramics   " ;
+                 rdfs:comment "Properties describing material thermal behavior and heat transfer characteristics"@en ;
+                 rdfs:label "Thermal Property"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Thermoplastic
+:Thermoplastic rdf:type owl:Class ;
+               rdfs:subClassOf :Plastic ;
+               rdfs:comment "Represents thermoplastic materials including PVC, Acrylic, Polycarbonate, Polyethylene, Polypropylene"@en ;
+               rdfs:label "Thermoplastic"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Thermoset
+:Thermoset rdf:type owl:Class ;
+           rdfs:subClassOf :Plastic ;
+           :examples "Epoxy resins for coatings, Phenolic plastics for electrical components, Epoxy and Phenolic Resins" ;
+           rdfs:comment "Represents thermoset plastic materials that undergo irreversible curing when heated, used for durable applications, including Epoxy and Phenolic Resins."@en ;
+           rdfs:label "Thermoset"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Tile
+:Tile rdf:type owl:Class ;
+      rdfs:subClassOf :MaterialCategory ;
+      <http://purl.org/dc/elements/1.1/description> "Category of manufactured flat pieces used to cover roofs, floors, walls, or other surfaces, providing protection and aesthetic enhancement"@en ;
+      :examples " Ceramic tiles for bathroom walls, Terracotta tiles for outdoor flooring " ;
+      rdfs:comment "Manufactured units used for covering surfaces in construction"@en ,
+                   " Represents tile materials used for covering surfaces, including floors, walls, and roofs.          " ;
+      rdfs:label "Tile" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#VinylCompositionTile
+:VinylCompositionTile rdf:type owl:Class ;
+                      rdfs:subClassOf :Flooring ;
+                      :examples " Vinyl tiles for commercial spaces, Vinyl tile flooring for kitchens " ;
+                      rdfs:comment " Represents vinyl composition tile flooring materials, popular for their affordability and durability." ;
+                      rdfs:label "Vinyl Composition Tile" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#VinylSheetFlooring
+:VinylSheetFlooring rdf:type owl:Class ;
+                    rdfs:subClassOf :Flooring ;
+                    :examples " Large sheets of vinyl for quick installation, Vinyl sheet flooring roll " ;
+                    rdfs:comment " Represents vinyl sheet flooring materials, used for seamless and easy-to-maintain surfaces.       " ;
+                    rdfs:label "Vinyl Sheet Flooring" .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#Wood
+:Wood rdf:type owl:Class ;
+      rdfs:subClassOf :MaterialCategory ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasMaterialProperty ;
+                        owl:someValuesFrom [ owl:intersectionOf ( :PhysicalProperty
+                                                                  [ rdf:type owl:Class ;
+                                                                    owl:oneOf ( :CompressionParallelToGrain
+                                                                                :CompressionPerpendiculartoGrain
+                                                                                :TensionParallelToGrain
+                                                                                :TensionPerpendicularToGrain
+                                                                              )
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ]
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :Compression ;
+                        owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :PoissonsRatio ;
+                        owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :TensileStrength ;
+                        owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :YieldStrength ;
+                        owl:maxCardinality "0"^^xsd:nonNegativeInteger
+                      ] ;
+      :examples "Oak wood for furniture, Pine wood for framing" ;
+      rdfs:comment "Wood materials used in construction"@en ;
+      rdfs:label "Wood"@en .
+
+
+###  https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial
+<https://w3id.org/digitalconstruction/0.3/BuildingMaterials#BuildingMaterial> rdf:type owl:Class ;
+                                                                              owl:disjointWith <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> ,
+                                                                                               <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                                                                              rdfs:comment "Material is a homogeneous or inhomogeneous substance that can be used to form elements (physical products or their components). This is same as IfcMaterial." ;
+                                                                              rdfs:label "Building Material" ;
+                                                                              rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterial.htm" .
+
+
+###  https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition
+<https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialDefinition> rdf:type owl:Class ;
+                                                                                owl:disjointWith <https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> ;
+                                                                                :examples " Concrete mix with specific strength, Glass composition with optical properties    " ;
+                                                                                rdfs:comment " Represents the definition of a material, specifying its characteristics and behavior. This is same as IfcMaterialDefinition             " ;
+                                                                                rdfs:label "Material Definition" ;
+                                                                                rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialdefinition.htm" .
+
+
+###  https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty
+<https://w3id.org/digitalconstruction/0.3/BuildingMaterials#MaterialProperty> rdf:type owl:Class ;
+                                                                              :examples " Thermal conductivity of insulation, Tensile strength of metal " ;
+                                                                              rdfs:comment " Represents various properties of materials, guiding their behavior and use in different contexts." ;
+                                                                              rdfs:label "Material Property" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#CompressionParallelToGrain
+:CompressionParallelToGrain rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#CompressionPerpendiculartoGrain
+:CompressionPerpendiculartoGrain rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PoissonsRatio
+:PoissonsRatio rdf:type owl:NamedIndividual ;
+               :correlatesWith :PoissonsRatioX ,
+                               :PoissonsRatioY ,
+                               :PoissonsRatioZ ;
+               :influencesProperty :ShearModulus ,
+                                   :YoungsModulus .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PoissonsRatioX
+:PoissonsRatioX rdf:type owl:NamedIndividual ;
+                <http://purl.org/dc/elements/1.1/description> "Directional Poisson's ratio in X-axis direction for anisotropic materials requiring directional property specification"@en ;
+                rdfs:comment "Directional Poisson's ratio in X-axis direction"@en ;
+                rdfs:label "Poisson's Ratio X"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PoissonsRatioY
+:PoissonsRatioY rdf:type owl:NamedIndividual ;
+                <http://purl.org/dc/elements/1.1/description> "Directional Poisson's ratio in Y-axis direction for anisotropic materials requiring directional property specification"@en ;
+                rdfs:comment "Directional Poisson's ratio in Y-axis direction"@en ;
+                rdfs:label "Poisson's Ratio Y"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#PoissonsRatioZ
+:PoissonsRatioZ rdf:type owl:NamedIndividual ;
+                <http://purl.org/dc/elements/1.1/description> "Directional Poisson's ratio in Z-axis direction for anisotropic materials requiring directional property specification"@en ;
+                rdfs:comment "Directional Poisson's ratio in Z-axis direction"@en ;
+                rdfs:label "Poisson's Ratio Z"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ShearModulus
+:ShearModulus rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#TensionParallelToGrain
+:TensionParallelToGrain rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#TensionPerpendicularToGrain
+:TensionPerpendicularToGrain rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalConductivity
+:ThermalConductivity rdf:type owl:NamedIndividual ;
+                     :correlatesWith :ThermalConductivityX ,
+                                     :ThermalConductivityY ,
+                                     :ThermalConductivityZ .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalConductivityX
+:ThermalConductivityX rdf:type owl:NamedIndividual ;
+                      <http://purl.org/dc/elements/1.1/description> "Directional thermal conductivity in X-axis direction for anisotropic materials requiring directional thermal analysis"@en ;
+                      rdfs:comment "Directional thermal conductivity in X-axis direction"@en ;
+                      rdfs:label "Thermal Conductivity X"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalConductivityY
+:ThermalConductivityY rdf:type owl:NamedIndividual ;
+                      <http://purl.org/dc/elements/1.1/description> "Directional thermal conductivity in Y-axis direction for anisotropic materials requiring directional thermal analysis"@en ;
+                      rdfs:comment "Directional thermal conductivity in Y-axis direction"@en ;
+                      rdfs:label "Thermal Conductivity Y"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalConductivityZ
+:ThermalConductivityZ rdf:type owl:NamedIndividual ;
+                      <http://purl.org/dc/elements/1.1/description> "Directional thermal conductivity in Z-axis direction for anisotropic materials requiring directional thermal analysis"@en ;
+                      rdfs:comment "Directional thermal conductivity in Z-axis direction"@en ;
+                      rdfs:label "Thermal Conductivity Z"@en .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalExpansionCoefficient
+:ThermalExpansionCoefficient rdf:type owl:NamedIndividual ;
+                             :correlatesWith :ThermalExpansionCoefficientX ,
+                                             :ThermalExpansionCoefficientY ,
+                                             :ThermalExpansionCoefficientZ .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalExpansionCoefficientX
+:ThermalExpansionCoefficientX rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalExpansionCoefficientY
+:ThermalExpansionCoefficientY rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#ThermalExpansionCoefficientZ
+:ThermalExpansionCoefficientZ rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YoungsModulus
+:YoungsModulus rdf:type owl:NamedIndividual ;
+               :correlatesWith :YoungsModulusX ,
+                               :YoungsModulusY ,
+                               :YoungsModulusZ .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YoungsModulusX
+:YoungsModulusX rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YoungsModulusY
+:YoungsModulusY rdf:type owl:NamedIndividual .
+
+
+###  http://www.BimToolsMaterialLibrary.com/BimBuildingMaterialsOntology#YoungsModulusZ
+:YoungsModulusZ rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/dc/elements/1.1/> <http://purl.org/dc/terms/modified> "2012-06-14"^^xsd:date ;
+                                   <http://purl.org/dc/terms/publisher> <http://purl.org/dc/aboutdcmi#DCMI> ;
+                                   <http://purl.org/dc/terms/title> "Dublin Core Metadata Element Set, Version 1.1"@en .
+
+
+<http://purl.org/dc/elements/1.1/description> <http://purl.org/dc/terms/description> "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en ;
+                                              <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                              rdfs:comment "An account of the resource."@en ;
+                                              rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                              rdfs:label "Description"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+<http://purl.org/dc/elements/1.1/title> <http://purl.org/dc/terms/issued> "1999-07-02"^^xsd:date ;
+                                        rdfs:comment "A name given to the resource."@en ;
+                                        rdfs:isDefinedBy <http://purl.org/dc/elements/1.1/> ;
+                                        rdfs:label "Title"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#note> "A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/title) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation."@en .
+
+
+:CompressionParallelToGrain <http://purl.org/dc/elements/1.1/description> "Compressive strength of wood material when load is applied parallel to the grain direction, accounting for anisotropic behavior"@en ;
+                            rdfs:comment "Compressive strength parallel to the wood grain direction"@en ;
+                            rdfs:label "Compression Parallel To Grain"@en .
+
+
+:CompressionPerpendiculartoGrain <http://purl.org/dc/elements/1.1/description> "Compressive strength of wood material when load is applied perpendicular to the grain direction, typically lower than parallel values"@en ;
+                                 rdfs:comment "Compressive strength perpendicular to the wood grain direction"@en ;
+                                 rdfs:label "Compression Perpendicular To Grain"@en .
+
+
+:Lightweight <http://purl.org/dc/elements/1.1/description> "Boolean indicator specifying if material is classified as lightweight, affecting structural calculations and applications"@en ;
+             :examples "Lightweight concrete blocks, Insulating lightweight concrete mix, Concrete materials with reduced structural weight" ;
+             rdfs:comment "Indicates whether the material is lightweight type"@en ;
+             rdfs:label "Lightweight"@en .
+
+
+:MaterialConstituent <http://purl.org/dc/elements/1.1/description> "Specification of single material constituent that forms part of composite material definition, following IFC material constituent model for complex material assemblies"@en ;
+                     :examples " Concrete aggregate, Fiberglass reinforcement for composite materials  " ;
+                     rdfs:comment "Individual material component within composite material assemblies"@en ;
+                     rdfs:label "Material Constituent" ;
+                     rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialconstituent.htm" .
+
+
+:MaterialConstituentSet <http://purl.org/dc/elements/1.1/description> "Set of material constituents that together define composite material composition, following IFC material constituent set model for complex material specifications"@en ;
+                        :examples " Set of materials for concrete mix, Composite panel constituents " ;
+                        rdfs:comment " Represents a set of material constituents, used in composite material definitions.              " ;
+                        rdfs:label "Material Constituent Set" ;
+                        rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialconstituentset.htm" .
+
+
+:MaterialLayer <http://purl.org/dc/elements/1.1/description> "Specification of single material layer within multi-layered material assembly, following IFC material layer model for wall, roof, and floor assemblies"@en ;
+               :examples " Insulation layer in a wall, Plywood layer in a door panel   " ;
+               rdfs:comment " Represents a layer of material within a material definition, used in composite structures.       " ;
+               rdfs:label "Material Layer" ;
+               rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmateriallayer.htm" .
+
+
+:MaterialLayerSet <http://purl.org/dc/elements/1.1/description> "Set of material layers that together define layered material assembly, following IFC material layer set model for complex building element specifications"@en ;
+                  :examples " Composite panel with insulation, Multilayered roof material " ;
+                  rdfs:comment "Collection of material layers forming layered assembly definition"@en ;
+                  rdfs:label "Material LayerSet" ;
+                  rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmateriallayerset.htm" .
+
+
+:MaterialProfile <http://purl.org/dc/elements/1.1/description> "Specification of material profile including cross-sectional properties and material characteristics, following IFC material profile model for structural elements"@en ;
+                 :examples " Timber profile with thermal resistance properties, Metal profile with corrosion resistance   " ;
+                 rdfs:comment "Material profile specification with cross-sectional characteristics"@en ;
+                 rdfs:label "Material Profile" ;
+                 rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialprofile.htm" .
+
+
+:MaterialProfileSet <http://purl.org/dc/elements/1.1/description> "Set of material profiles that together define profile assembly, following IFC material profile set model for complex structural element specifications"@en ;
+                    :examples " Set of wall cladding profiles, Different flooring profiles for different areas " ;
+                    rdfs:comment " Represents a set of material profiles, offering a range of variations in material characteristics." ;
+                    rdfs:label "Material Profile Set"@en ;
+                    rdfs:seeAlso "https://standards.buildingsmart.org/IFC/DEV/IFC4_2/FINAL/HTML/schema/ifcmaterialresource/lexical/ifcmaterialprofileset.htm" .
+
+
+:PoissonsRatio <http://purl.org/dc/elements/1.1/description> "Ratio of transverse strain to axial strain when material is subjected to uniaxial stress, fundamental elastic property"@en ;
+               rdfs:comment "Poisson's ratio of the material"@en ;
+               rdfs:label "Poisson's Ratio"@en .
+
+
+:ShearModulus <http://purl.org/dc/elements/1.1/description> "Measure of material's resistance to shear deformation, ratio of shear stress to shear strain"@en ;
+              rdfs:comment "Shear modulus of the material"@en ;
+              rdfs:label "Shear Modulus"@en .
+
+
+:TensionParallelToGrain <http://purl.org/dc/elements/1.1/description> "Tensile strength of wood material when tension is applied parallel to grain direction, typically highest strength orientation"@en ;
+                        rdfs:comment "Tensile strength parallel to wood grain direction"@en ;
+                        rdfs:label "Tension Parallel To Grain"@en .
+
+
+:TensionPerpendicularToGrain <http://purl.org/dc/elements/1.1/description> "Tensile strength of wood material when tension is applied perpendicular to grain direction, typically lower than parallel values"@en ;
+                             rdfs:comment "Tensile strength perpendicular to wood grain direction"@en ;
+                             rdfs:label "Tension Perpendicular To Grain"@en .
+
+
+:ThermalConductivity <http://purl.org/dc/elements/1.1/description> "Rate at which material conducts heat, fundamental property for thermal performance analysis and energy calculations"@en ;
+                     rdfs:comment "Rate at which material conducts heat"@en ;
+                     rdfs:label "Thermal Conductivity"@en .
+
+
+:ThermalExpansionCoefficient <http://purl.org/dc/elements/1.1/description> "Rate of dimensional change per unit temperature change, critical for thermal movement calculations and joint design"@en ;
+                             rdfs:comment "Thermal expansion coefficient of the material"@en ;
+                             rdfs:label "Thermal Expansion Coefficient"@en .
+
+
+:ThermalExpansionCoefficientX <http://purl.org/dc/elements/1.1/description> "Directional thermal expansion coefficient in X-axis direction for anisotropic materials requiring directional thermal analysis"@en ;
+                              rdfs:comment "Thermal expansion coefficient in X-direction for anisotropic materials"@en ;
+                              rdfs:label "Thermal Expansion Coefficient X"@en .
+
+
+:ThermalExpansionCoefficientY <http://purl.org/dc/elements/1.1/description> "Directional thermal expansion coefficient in Y-axis direction for anisotropic materials requiring directional thermal analysis"@en ;
+                              rdfs:comment "Thermal expansion coefficient in Y-direction for anisotropic materials"@en ;
+                              rdfs:label "Thermal Expansion Coefficient Y"@en .
+
+
+:ThermalExpansionCoefficientZ <http://purl.org/dc/elements/1.1/description> "Directional thermal expansion coefficient in Z-axis direction for anisotropic materials requiring directional thermal analysis"@en ;
+                              rdfs:comment "Thermal expansion coefficient in Z-direction for anisotropic materials"@en ;
+                              rdfs:label "Thermal Expansion Coefficient Z"@en .
+
+
+:YoungsModulus <http://purl.org/dc/elements/1.1/description> "Measure of tensile elasticity, ratio of tensile stress to tensile strain, fundamental property for structural analysis"@en ;
+               rdfs:comment "Young's modulus of elasticity of the material"@en ;
+               rdfs:label "Young's Modulus"@en ,
+                          "Young's modulus"@en .
+
+
+:YoungsModulusX <http://purl.org/dc/elements/1.1/description> "Directional Young's modulus in X-axis direction for anisotropic materials requiring directional elastic property specification"@en ;
+                rdfs:comment "Directional Young's modulus in X-axis direction"@en ;
+                rdfs:label "Young's Modulus X"@en .
+
+
+:YoungsModulusY <http://purl.org/dc/elements/1.1/description> "Directional Young's modulus in Y-axis direction for anisotropic materials requiring directional elastic property specification"@en ;
+                rdfs:comment "Directional Young's modulus in Y-axis direction"@en ;
+                rdfs:label "Young's Modulus Y"@en .
+
+
+:YoungsModulusZ <http://purl.org/dc/elements/1.1/description> "Directional Young's modulus in Z-axis direction for anisotropic materials requiring directional elastic property specification"@en ;
+                rdfs:comment "Directional Young's modulus in Z-axis direction"@en ;
+                rdfs:label "Young's Modulus Z"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AcousticCeilingTile
+                :AsphaltBitumen
+                :AsphaltPaving
+                :AsphaltShingle
+                :DampProofing
+                :Earth
+                :Gravel
+                :Paper
+                :Sand
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Aluminum
+                :Iron
+                :NonFerrous
+                :Steel
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Bamboo
+                :CorkTiles
+                :Terrazzo
+                :VinylCompositionTile
+                :VinylSheetFlooring
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BehaviorProperty
+                :GeneralInformation
+                :MechanicalProperty
+                :PhysicalProperty
+                :ThermalProperty
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Ceramic
+                :Concrete
+                :Flooring
+                :Gas
+                :GenericCeramic
+                :Glass
+                :Insulation
+                :Liquid
+                :Masonry
+                :Metal
+                :Miscellaneous
+                :Plaster
+                :Plastic
+                :Stone
+                :Tile
+                :Wood
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ClassificationSystem
+                :CountrySpecificStandard
+                :InternationalStandard
+                :LCADatabase
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Composite
+                :Elastomer
+                :Expanded
+                :Thermoplastic
+                :Thermoset
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :FiberReinforced
+                :HighStrength
+                :Lightweight
+                :Standard
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :MaterialConstituent
+                :MaterialConstituentSet
+                :MaterialLayer
+                :MaterialLayerSet
+                :MaterialProfile
+                :MaterialProfileSet
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
